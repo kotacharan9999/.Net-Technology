@@ -1,0 +1,95 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        class Student
+        {
+            public int AdmissionNumber;
+            public string StudentName;
+            public string Course;
+            public int Semester;
+
+            private double Fees;
+            private bool IsScholarshipEligible;
+            private const double Scholarship = 0.10;
+
+            public Student()
+            {
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine("STUDENT ADMISSION SYSTEM");
+                Console.WriteLine("---------------------------------");
+
+                Course = "COMPUTER SCIENCE";
+                Semester = 5;
+
+                Console.WriteLine("STUDENT OBJECT CREATED SUCCESSFULLY");
+                Console.WriteLine();
+            }
+
+            public void AcceptDetails()
+            {
+                Console.Write("Enter Admission Number: ");
+                AdmissionNumber = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Student Name: ");
+                StudentName = Console.ReadLine();
+
+                Console.Write("Enter Course: ");
+                Course = Console.ReadLine();
+
+                Console.Write("Enter Semester: ");
+                Semester = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Admission Fees: ");
+                Fees = Convert.ToDouble(Console.ReadLine());
+            }
+
+            public void CheckScholarshipEligibility()
+            {
+                if (Fees <= 50000)
+                {
+                    IsScholarshipEligible = true;
+                }
+                else
+                {
+                    IsScholarshipEligible = false;
+                }
+            }
+
+            public void DisplayDetails()
+            {
+                double finalFees = Fees;
+
+                if (IsScholarshipEligible)
+                {
+                    finalFees = Fees - (Fees * Scholarship);
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine("Admission Number : " + AdmissionNumber);
+                Console.WriteLine("Student Name     : " + StudentName);
+                Console.WriteLine("Course           : " + Course);
+                Console.WriteLine("Semester         : " + Semester);
+                Console.WriteLine("Admission Fees   : " + Fees);
+                Console.WriteLine("Scholarship      : " +
+                    (IsScholarshipEligible ? "Eligible" : "Not Eligible"));
+                Console.WriteLine("Final Fees       : " + finalFees);
+                Console.WriteLine("---------------------------------");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Student student1 = new Student();
+
+            student1.AcceptDetails();
+            student1.CheckScholarshipEligibility();
+            student1.DisplayDetails();
+
+            Console.ReadKey();
+        }
+    }
+}
