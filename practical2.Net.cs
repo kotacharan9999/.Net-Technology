@@ -6,8 +6,7 @@ public interface IPayable
     decimal CalculatePay();
 }
 
-
-public abstract class Employee : IPable
+public abstract class Employee : IPayable
 {
     public string Name { get; set; }
     public int Id { get; set; }
@@ -18,10 +17,8 @@ public abstract class Employee : IPable
         Id = id;
     }
 
-   
     public abstract decimal CalculatePay();
 }
-
 
 public class SalariedEmployee : Employee
 {
@@ -59,16 +56,55 @@ class Program
 {
     static void Main()
     {
-        SalariedEmployee charan1 = new SalariedEmployee("Charan One", 101, 4000m);
-        HourlyEmployee charan2 = new HourlyEmployee("Charan Two", 102, 25m, 160m);
-
         List<Employee> staffList = new List<Employee>();
-        staffList.Add(charan1);
-        staffList.Add(charan2);
 
+        Console.Write("Enter number of employees to add: ");
+        if (!int.TryParse(Console.ReadLine(), out int count))
+        {
+            Console.WriteLine("Invalid input. Exiting.");
+            return;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine($"\n--- Entering details for Employee #{i + 1} ---");
+            
+            Console.Write("Enter Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter ID: ");
+            int id = int.Parse(Console.ReadLine());
+
+            Console.Write("Employee Type (1 for Salaried, 2 for Hourly): ");
+            int type = int.Parse(Console.ReadLine());
+
+            if (type == 1)
+            {
+                Console.Write("Enter Monthly Salary: ");
+                decimal salary = decimal.Parse(Console.ReadLine());
+                staffList.Add(new SalariedEmployee(name, id, salary));
+            }
+            else if (type == 2)
+            {
+                Console.Write("Enter Hourly Rate: ");
+                decimal rate = decimal.Parse(Console.ReadLine());
+
+                Console.Write("Enter Hours Worked: ");
+                decimal hours = decimal.Parse(Console.ReadLine());
+
+                staffList.Add(new HourlyEmployee(name, id, rate, hours));
+            }
+            else
+            {
+                Console.WriteLine("Invalid employee type. Skipping.");
+            }
+        }
+
+        Console.WriteLine("\n================ RESULTS ================");
         foreach (Employee emp in staffList)
         {
-            Console.WriteLine($"Employee: {emp.Name}");
+            Console.WriteLine($"Employee ID: {emp.Id}");
+            Console.WriteLine($"Employee Name: {emp.Name}");
             Console.WriteLine($"Pay Amount: ${emp.CalculatePay()}");
             Console.WriteLine("-------------------");
         }
