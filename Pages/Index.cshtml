@@ -1,0 +1,51 @@
+﻿@page
+@model Practical4.Pages.IndexModel
+
+<h2>Event Registration Form</h2>
+
+<form method="post">
+
+    <label>Name:</label>
+    <br>
+    <input asp-for="Name">
+    <span asp-validation-for="Name" style="color:red"></span>
+
+    <br><br>
+
+    <label>Email:</label>
+    <br>
+    <input asp-for="Email">
+    <span asp-validation-for="Email" style="color:red"></span>
+
+    <br><br>
+
+    <label>Contact Number:</label>
+    <br>
+    <input asp-for="Contact">
+    <span asp-validation-for="Contact" style="color:red"></span>
+
+    <br><br>
+
+    <label>Select Event:</label>
+    <br>
+    <select asp-for="Event">
+        <option value="">Select Event</option>
+        <option>Business Workshop</option>
+        <option>AI Workshop</option>
+        <option>Web Development Workshop</option>
+        <option>Cloud Computing Workshop</option>
+    </select>
+    <span asp-validation-for="Event" style="color:red"></span>
+
+    <br><br>
+
+    <button type="submit">Register</button>
+
+    <br>
+
+    @if (Model.Message != null)
+    {
+        <p style="color:green">@Model.Message</p>
+    }
+
+</form>
