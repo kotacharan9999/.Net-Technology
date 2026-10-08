@@ -1,0 +1,399 @@
+﻿@model Practical7.Models.Feedback
+
+<table align="center" cellpadding="8">
+
+    <!-- Student Name -->
+
+    <tr>
+        <td>
+            <label>Student Name *</label>
+        </td>
+
+        <td>
+            @Html.TextBoxFor(
+                x => x.Name,
+                new
+                {
+                    placeholder = "Enter your full name",
+                    maxlength = "50"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Name,
+                "",
+                new { style = "color:red" })
+        </td>
+    </tr>
+
+
+    <!-- Email -->
+
+    <tr>
+        <td>
+            <label>Email *</label>
+        </td>
+
+        <td>
+            @Html.TextBoxFor(
+                x => x.Email,
+                new
+                {
+                    placeholder = "example@gmail.com",
+                    maxlength = "100"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Email,
+                "",
+                new { style = "color:red" })
+        </td>
+    </tr>
+
+
+    <!-- Phone -->
+
+    <tr>
+        <td>
+            <label>Phone Number</label>
+        </td>
+
+        <td>
+            @Html.TextBoxFor(
+                x => x.Phone,
+                new
+                {
+                    type = "tel",
+                    placeholder = "10 digit number",
+                    maxlength = "10"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Phone,
+                "",
+                new { style = "color:red" })
+        </td>
+    </tr>
+
+
+    <!-- Department -->
+
+    <tr>
+        <td>
+            <label>Department</label>
+        </td>
+
+        <td>
+            @Html.TextBoxFor(
+                x => x.Department,
+                new
+                {
+                    placeholder = "Example: Computer Science",
+                    maxlength = "50"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Department,
+                "",
+                new { style = "color:red" })
+        </td>
+    </tr>
+
+
+    <!-- Course -->
+
+    <tr>
+        <td>
+            <label>Course *</label>
+        </td>
+
+        <td>
+
+            @Html.DropDownListFor(
+                x => x.Course,
+                new SelectList(
+                    new[]
+                    {
+                        "B.Tech",
+                        "BCA",
+                        "MCA",
+                        "B.Sc",
+                        "M.Sc"
+                    }),
+                "Select Course"
+            )
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Course,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+
+    <!-- Semester -->
+
+    <tr>
+        <td>
+            <label>Semester *</label>
+        </td>
+
+        <td>
+
+            @Html.DropDownListFor(
+                x => x.Semester,
+                new SelectList(
+                    new[]
+                    {
+                        new { Value = 1, Text = "Semester 1" },
+                        new { Value = 2, Text = "Semester 2" },
+                        new { Value = 3, Text = "Semester 3" },
+                        new { Value = 4, Text = "Semester 4" },
+                        new { Value = 5, Text = "Semester 5" },
+                        new { Value = 6, Text = "Semester 6" },
+                        new { Value = 7, Text = "Semester 7" },
+                        new { Value = 8, Text = "Semester 8" }
+                    },
+                    "Value",
+                    "Text"
+                ),
+                "Select Semester"
+            )
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Semester,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+
+    <!-- Subject -->
+
+    <tr>
+        <td>
+            <label>Subject *</label>
+        </td>
+
+        <td>
+
+            @Html.TextBoxFor(
+                x => x.Subject,
+                new
+                {
+                    placeholder = "Enter subject name",
+                    maxlength = "60"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Subject,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+
+    <!-- Overall Rating -->
+
+    <tr>
+        <td>
+            <label>Overall Rating *</label>
+        </td>
+
+        <td>
+
+            @Html.RadioButtonFor(x => x.Rating, 1)
+            <label>1</label>
+
+            @Html.RadioButtonFor(x => x.Rating, 2)
+            <label>2</label>
+
+            @Html.RadioButtonFor(x => x.Rating, 3)
+            <label>3</label>
+
+            @Html.RadioButtonFor(x => x.Rating, 4)
+            <label>4</label>
+
+            @Html.RadioButtonFor(x => x.Rating, 5)
+            <label>5</label>
+
+            <br />
+
+            <small>1 = Poor, 5 = Excellent</small>
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Rating,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+
+    <!-- Teaching Quality -->
+
+    <tr>
+        <td>
+            <label>Teaching Quality *</label>
+        </td>
+
+        <td>
+
+            @Html.RadioButtonFor(
+                x => x.TeachingQuality,
+                "Excellent")
+
+            <label>Excellent</label>
+
+            @Html.RadioButtonFor(
+                x => x.TeachingQuality,
+                "Good")
+
+            <label>Good</label>
+
+            @Html.RadioButtonFor(
+                x => x.TeachingQuality,
+                "Average")
+
+            <label>Average</label>
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.TeachingQuality,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+
+    <!-- Recommendation -->
+
+    <tr>
+        <td>
+            <label>Recommend Subject</label>
+        </td>
+
+        <td>
+
+            @Html.RadioButtonFor(
+                x => x.Recommend,
+                "Yes")
+
+            <label>Yes</label>
+
+            @Html.RadioButtonFor(
+                x => x.Recommend,
+                "No")
+
+            <label>No</label>
+
+        </td>
+    </tr>
+
+
+    <!-- Checkboxes -->
+
+    <tr>
+        <td>
+            <label>What did you like?</label>
+        </td>
+
+        <td>
+
+            @Html.CheckBoxFor(x => x.Teaching)
+            <label>Teaching</label>
+
+            <br />
+
+            @Html.CheckBoxFor(x => x.CourseContent)
+            <label>Course Content</label>
+
+            <br />
+
+            @Html.CheckBoxFor(x => x.PracticalWork)
+            <label>Practical Work</label>
+
+        </td>
+    </tr>
+
+
+    <!-- Feedback -->
+
+    <tr>
+        <td>
+            <label>Your Feedback *</label>
+        </td>
+
+        <td>
+
+            @Html.TextAreaFor(
+                x => x.FeedbackText,
+                new
+                {
+                    rows = "5",
+                    cols = "40",
+                    maxlength = "500",
+                    placeholder = "Enter your feedback (maximum 500 characters)"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.FeedbackText,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+
+    <!-- Suggestions -->
+
+    <tr>
+        <td>
+            <label>Suggestions</label>
+        </td>
+
+        <td>
+
+            @Html.TextAreaFor(
+                x => x.Suggestions,
+                new
+                {
+                    rows = "4",
+                    cols = "40",
+                    maxlength = "300",
+                    placeholder = "Enter suggestions (optional, maximum 300 characters)"
+                })
+
+            <br />
+
+            @Html.ValidationMessageFor(
+                x => x.Suggestions,
+                "",
+                new { style = "color:red" })
+
+        </td>
+    </tr>
+
+</table>

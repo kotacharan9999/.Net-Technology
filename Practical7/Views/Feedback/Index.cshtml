@@ -1,0 +1,38 @@
+﻿@model Practical7.Models.Feedback
+
+@{
+    ViewData["Title"] = "Student Feedback";
+}
+
+<center>
+
+    <h2>Student Feedback Form</h2>
+
+    <p>
+        Please provide your feedback about the course and subject.
+        Your response will help us improve the learning experience.
+    </p>
+
+    @if (ViewBag.Message != null)
+    {
+        <p>
+            <b>@ViewBag.Message</b>
+        </p>
+    }
+
+    <form asp-action="Index" method="post">
+
+        <partial name="_Feedback" />
+
+        <br />
+
+        <input type="submit" value="Submit Feedback" />
+
+    </form>
+
+</center>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
