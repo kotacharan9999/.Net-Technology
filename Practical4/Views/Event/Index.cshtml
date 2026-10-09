@@ -1,0 +1,77 @@
+﻿@model Practical4.Models.EventRegistration
+
+@{
+    ViewData["Title"] = "Event Registration";
+}
+
+<center>
+    <h1>Online Event Registration</h1>
+    <p>Fill in the details below to register for an event.</p>
+
+    @if (ViewBag.Message != null)
+    {
+        <p style="color:green">
+            <b>@ViewBag.Message</b>
+        </p>
+    }
+
+    <form asp-controller="Event" asp-action="Index" method="post">
+
+        <p>
+            <label>Full Name *</label><br />
+            <input asp-for="Name" placeholder="Enter your name" />
+            <br />
+            <span asp-validation-for="Name" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Email *</label><br />
+            <input asp-for="Email" placeholder="Enter your email" />
+            <br />
+            <span asp-validation-for="Email" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Phone Number *</label><br />
+            <input asp-for="Phone" placeholder="Enter 10 digit phone number" />
+            <br />
+            <span asp-validation-for="Phone" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Choose Event *</label><br />
+            <select asp-for="EventName">
+                <option value="">-- Select Event --</option>
+                <option value="Technical Workshop">Technical Workshop</option>
+                <option value="Coding Competition">Coding Competition</option>
+                <option value="Seminar">Seminar</option>
+                <option value="Cultural Fest">Cultural Fest</option>
+            </select>
+            <br />
+            <span asp-validation-for="EventName" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Event Date *</label><br />
+            <input asp-for="EventDate" type="date" />
+            <br />
+            <span asp-validation-for="EventDate" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Number of Participants *</label><br />
+            <input asp-for="Participants" type="number" min="1" max="10" />
+            <br />
+            <span asp-validation-for="Participants" style="color:red"></span>
+        </p>
+
+        <p>
+            <input type="submit" value="Register Now" />
+        </p>
+
+    </form>
+</center>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

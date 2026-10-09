@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|c:\\hc\\sem5\\.net\\practicals\\practical4\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|c:\\hc\\sem5\\.net\\practicals\\practical4\\views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|solutionrelative:views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|c:\\hc\\sem5\\.net\\practicals\\practical4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|c:\\hc\\sem5\\.net\\practicals\\practical4\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|solutionrelative:controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|c:\\hc\\sem5\\.net\\practicals\\practical4\\models\\eventregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43A703E-DAC3-4B5D-B8D2-7B7B6CE9F3CC}|Practical4.csproj|solutionrelative:models\\eventregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 246,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-09T09:29:02.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T09:27:39.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Views\\Event\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Event\\Index.cshtml",
+              "ToolTip": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Views\\Event\\Index.cshtml",
+              "RelativeToolTip": "Views\\Event\\Index.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-09T09:27:21.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
+              "ToolTip": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T09:25:23.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EventRegistration.cs",
+              "DocumentMoniker": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Models\\EventRegistration.cs",
+              "RelativeDocumentMoniker": "Models\\EventRegistration.cs",
+              "ToolTip": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Models\\EventRegistration.cs",
+              "RelativeToolTip": "Models\\EventRegistration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-09T09:24:12.502Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 139,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
