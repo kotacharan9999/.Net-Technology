@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<Practical6.Models.Product>
+
+@{
+    ViewData["Title"] = "Product Catalog";
+}
+
+<center>
+    <h1>Product Catalog</h1>
+    <p>Browse our available products.</p>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Details</th>
+        </tr>
+
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>₹@product.Price</td>
+                <td>@product.Stock</td>
+                <td>
+                    <a asp-controller="Product"
+                       asp-action="Details"
+                       asp-route-id="@product.Id">View Details</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <p>Total Products: @Model.Count()</p>
+</center>

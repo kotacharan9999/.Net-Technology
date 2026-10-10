@@ -4,3 +4,9 @@ bin/
 **/bin/
 obj/
 **/obj/
+.vs/
+**/.vs/
+bin/
+**/bin/
+obj/
+**/obj/
