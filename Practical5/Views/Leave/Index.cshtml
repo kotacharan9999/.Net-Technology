@@ -1,0 +1,164 @@
+﻿@model Practical5.Models.LeaveApplication
+
+@{
+    ViewData["Title"] = "Academic Calendar & Leave Management";
+}
+
+<center>
+    <h1>Academic Calendar & Leave Management</h1>
+    <p>College Events | Student Leave Portal</p>
+
+    @if (ViewBag.Message != null)
+    {
+        <h3>@ViewBag.Message</h3>
+    }
+
+    @if (ViewBag.SavedName != null)
+    {
+        <p>Remembered Student: <b>@ViewBag.SavedName</b></p>
+    }
+</center>
+
+<hr />
+
+<table width="100%" cellpadding="15">
+    <tr>
+        <!-- LEFT SIDE: ACADEMIC CALENDAR -->
+        <td width="35%" valign="top" align="center">
+            <h2>Academic Calendar</h2>
+            <p>Important college events</p>
+
+            <table border="1" cellpadding="10" width="100%">
+                <tr>
+                    <th>No.</th>
+                    <th>Event</th>
+                </tr>
+
+                @{
+                    int number = 1;
+                }
+
+                @foreach (string eventName in ViewBag.AcademicEvents)
+                {
+                    <tr>
+                        <td align="center">@number</td>
+                        <td>@eventName</td>
+                    </tr>
+                    number++;
+                }
+            </table>
+
+            <p><b>Total Events:</b> @ViewBag.AcademicEvents.Length</p>
+        </td>
+
+        <!-- RIGHT SIDE: LEAVE APPLICATION -->
+        <td width="65%" valign="top" align="center">
+            <h2>Leave Application</h2>
+            <p>Fill in the details to request leave.</p>
+
+            <form asp-controller="Leave" asp-action="Index" method="post">
+                <div asp-validation-summary="All"></div>
+
+                <table cellpadding="9">
+                    <tr>
+                        <td align="right">
+                            <label asp-for="StudentName">Student Name *</label>
+                        </td>
+                        <td>
+                            <input asp-for="StudentName"
+                                   maxlength="50"
+                                   placeholder="Enter your name"
+                                   required />
+                            <br />
+                            <span asp-validation-for="StudentName"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label asp-for="LeaveType">Leave Type *</label>
+                        </td>
+                        <td>
+                            <select asp-for="LeaveType" required>
+                                <option value="">Select Leave Type</option>
+                                @foreach (string type in ViewBag.LeaveTypes)
+                                {
+                                    <option value="@type">@type</option>
+                                }
+                            </select>
+                            <br />
+                            <span asp-validation-for="LeaveType"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label asp-for="StartDate">Start Date *</label>
+                        </td>
+                        <td>
+                            <input asp-for="StartDate" type="date" required />
+                            <br />
+                            <span asp-validation-for="StartDate"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label asp-for="EndDate">End Date *</label>
+                        </td>
+                        <td>
+                            <input asp-for="EndDate" type="date" required />
+                            <br />
+                            <span asp-validation-for="EndDate"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label asp-for="AcademicEvent">Academic Event *</label>
+                        </td>
+                        <td>
+                            <select asp-for="AcademicEvent" required>
+                                <option value="">Select Event</option>
+                                @foreach (string eventName in ViewBag.AcademicEvents)
+                                {
+                                    <option value="@eventName">@eventName</option>
+                                }
+                            </select>
+                            <br />
+                            <span asp-validation-for="AcademicEvent"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" valign="top">
+                            <label asp-for="Reason">Reason *</label>
+                        </td>
+                        <td>
+                            <textarea asp-for="Reason"
+                                      rows="4"
+                                      cols="25"
+                                      minlength="5"
+                                      maxlength="200"
+                                      placeholder="Enter reason (5-200 characters)"
+                                      required></textarea>
+                            <br />
+                            <span asp-validation-for="Reason"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="submit">Submit Application</button>
+                            <button type="reset">Clear Form</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+</table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
