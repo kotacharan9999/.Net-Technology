@@ -1,0 +1,108 @@
+﻿@model Practical6.Models.Feedback
+
+<div asp-validation-summary="All"></div>
+
+<form asp-controller="Feedback" asp-action="Index" method="post">
+
+    <table cellpadding="8">
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Name, "Full Name *")</td>
+            <td>
+                @Html.TextBoxFor(m => m.Name,
+                    new { placeholder = "Enter full name", maxlength = "50", required = "required" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Email, "Email Address *")</td>
+            <td>
+                @Html.TextBoxFor(m => m.Email,
+                    new { type = "email", placeholder = "student@example.com", maxlength = "100", required = "required" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Email)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Department, "Department *")</td>
+            <td>
+                @Html.TextBoxFor(m => m.Department,
+                    new { placeholder = "Enter department", maxlength = "50", required = "required" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Department)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Category, "Feedback Category *")</td>
+            <td>
+                <select asp-for="Category" required>
+                    <option value="">Select Category</option>
+                    @foreach (string category in ViewBag.Categories)
+                    {
+                        <option value="@category">@category</option>
+                    }
+                </select>
+                <br />
+                <span asp-validation-for="Category"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Rating, "Overall Rating *")</td>
+            <td>
+                @Html.DropDownListFor(m => m.Rating,
+                    new SelectList(new[]
+                    {
+                        new { Value = "", Text = "Select Rating" },
+                        new { Value = "1", Text = "1 - Poor" },
+                        new { Value = "2", Text = "2 - Fair" },
+                        new { Value = "3", Text = "3 - Good" },
+                        new { Value = "4", Text = "4 - Very Good" },
+                        new { Value = "5", Text = "5 - Excellent" }
+                    }, "Value", "Text"),
+                    new { required = "required" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Rating)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Comments, "Your Feedback *")</td>
+            <td>
+                @Html.TextAreaFor(m => m.Comments, 4, 30,
+                    new { placeholder = "Write 5-300 characters", maxlength = "300", required = "required" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Comments)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">@Html.LabelFor(m => m.Suggestions, "Suggestions")</td>
+            <td>
+                @Html.TextAreaFor(m => m.Suggestions, 3, 30,
+                    new { placeholder = "Optional suggestions", maxlength = "200" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Suggestions)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">Would you recommend us?</td>
+            <td>
+                @Html.CheckBoxFor(m => m.Recommend)
+                Yes, I recommend it
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Submit Feedback</button>
+                <button type="reset">Clear Form</button>
+            </td>
+        </tr>
+    </table>
+
+</form>

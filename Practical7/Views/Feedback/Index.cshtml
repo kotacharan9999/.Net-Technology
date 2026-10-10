@@ -1,0 +1,29 @@
+﻿@model Practical6.Models.Feedback
+
+@{
+    ViewData["Title"] = "Feedback Management";
+}
+
+<center>
+    <h1>Student Feedback Management</h1>
+    <p>Your feedback helps us improve teaching, facilities, and services.</p>
+
+    <hr />
+
+    @if (ViewBag.Message != null)
+    {
+        <h3>@ViewBag.Message</h3>
+        <p>Thank you, @ViewBag.SubmittedName.</p>
+        <p>Your submitted rating: @ViewBag.SubmittedRating / 5</p>
+    }
+
+    <h2>Feedback Form</h2>
+    <p>Fields marked with * are required.</p>
+    <p>Please provide honest feedback. Your comments must contain 5 to 300 characters.</p>
+
+    <partial name="_FeedbackForm" model="Model" />
+</center>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
