@@ -9,7 +9,7 @@ namespace Practical8
 {
     public partial class Form1 : Form
     {
-        string connectionString =
+        readonly string connectionString =
             @"Server=(localdb)\MSSQLLocalDB;Database=InventoryDB;Integrated Security=True;TrustServerCertificate=True;";
 
         TextBox txtID = new TextBox();
@@ -135,7 +135,7 @@ namespace Practical8
             return true;
         }
 
-        void AddProduct(object sender, EventArgs e)
+        void AddProduct(object? sender, EventArgs e)
         {
             if (!ValidateInput()) return;
 
@@ -163,7 +163,7 @@ namespace Practical8
 
                 MessageBox.Show("Product added successfully!");
                 LoadProducts();
-                ClearFields(null, null);
+                ClearFields(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
@@ -171,7 +171,7 @@ namespace Practical8
             }
         }
 
-        void UpdateProduct(object sender, EventArgs e)
+        void UpdateProduct(object? sender, EventArgs e)
         {
             if (txtID.Text == "")
             {
@@ -207,7 +207,7 @@ namespace Practical8
 
                 MessageBox.Show("Product updated successfully!");
                 LoadProducts();
-                ClearFields(null, null);
+                ClearFields(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
@@ -215,7 +215,7 @@ namespace Practical8
             }
         }
 
-        void DeleteProduct(object sender, EventArgs e)
+        void DeleteProduct(object? sender, EventArgs e)
         {
             if (txtID.Text == "")
             {
@@ -249,7 +249,7 @@ namespace Practical8
 
                 MessageBox.Show("Product deleted successfully!");
                 LoadProducts();
-                ClearFields(null, null);
+                ClearFields(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
@@ -257,7 +257,7 @@ namespace Practical8
             }
         }
 
-        void Grid_CellClick(object sender,
+        void Grid_CellClick(object? sender,
             DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -265,17 +265,17 @@ namespace Practical8
                 DataGridViewRow row = grid.Rows[e.RowIndex];
 
                 txtID.Text =
-                    row.Cells["ProductID"].Value.ToString();
+                    row.Cells["ProductID"].Value?.ToString() ?? "";
                 txtName.Text =
-                    row.Cells["ProductName"].Value.ToString();
+                    row.Cells["ProductName"].Value?.ToString() ?? "";
                 txtQuantity.Text =
-                    row.Cells["Quantity"].Value.ToString();
+                    row.Cells["Quantity"].Value?.ToString() ?? "";
                 txtPrice.Text =
-                    row.Cells["Price"].Value.ToString();
+                    row.Cells["Price"].Value?.ToString() ?? "";
             }
         }
 
-        void ClearFields(object sender, EventArgs e)
+        void ClearFields(object? sender, EventArgs e)
         {
             txtID.Clear();
             txtName.Clear();
@@ -284,7 +284,7 @@ namespace Practical8
             grid.ClearSelection();
         }
 
-        void RefreshProducts(object sender, EventArgs e)
+        void RefreshProducts(object? sender, EventArgs e)
         {
             LoadProducts();
         }
