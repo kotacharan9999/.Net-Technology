@@ -1,0 +1,54 @@
+﻿@model Practical9.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="page-heading">
+    <h1>Student Details</h1>
+    <p>Complete placement information for the selected student.</p>
+</div>
+
+<div class="form-section">
+
+    <div class="detail-row">
+        <span>Student ID</span>
+        <strong>@Model.StudentID</strong>
+    </div>
+
+    <div class="detail-row">
+        <span>Student Name</span>
+        <strong>@Model.StudentName</strong>
+    </div>
+
+    <div class="detail-row">
+        <span>Department</span>
+        <strong>@Model.Department</strong>
+    </div>
+
+    <div class="detail-row">
+        <span>Company</span>
+        <strong>@Model.Company</strong>
+    </div>
+
+    <div class="detail-row">
+        <span>Package</span>
+        <strong>@Model.Package.ToString("0.0") LPA</strong>
+    </div>
+
+    <div class="detail-row">
+        <span>Placement Status</span>
+        <strong>@Model.PlacementStatus</strong>
+    </div>
+
+    <div class="form-buttons">
+        <a asp-action="Edit"
+           asp-route-id="@Model.StudentID"
+           class="primary-btn">Edit Details</a>
+
+        <a asp-action="Index" class="secondary-btn">
+            Back to Dashboard
+        </a>
+    </div>
+
+</div>

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Practical4.csproj",
+      "projectUniqueName": "C:\\HC\\Sem5\\.Net\\Practicals\\.Net-Technology\\Practical4\\Practical4.csproj",
       "projectName": "Practical4",
-      "projectPath": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\Practical4.csproj",
+      "projectPath": "C:\\HC\\Sem5\\.Net\\Practicals\\.Net-Technology\\Practical4\\Practical4.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\HC\\Sem5\\.Net\\Practicals\\Practical4\\obj\\",
+      "outputPath": "C:\\HC\\Sem5\\.Net\\Practicals\\.Net-Technology\\Practical4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
