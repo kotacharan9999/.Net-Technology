@@ -1,0 +1,4 @@
+@model CampusServiceRequest
+@{ ViewData["Title"] = "Delete Request"; }
+<div class="form-shell"><a class="back-link" asp-action="Index">← Back to dashboard</a><div class="delete-panel"><span class="eyebrow">CONFIRM ACTION</span><h1>Delete request #@Model.Id?</h1><p>You are about to delete <strong>@Model.Title</strong> submitted by @Model.StudentName. This action cannot be undone.</p>
+<form asp-action="Delete" method="post"><input type="hidden" name="id" value="@Model.Id" /><div class="form-actions"><a class="btn btn-outline" asp-action="Index">Cancel</a><button class="btn btn-danger" type="submit">Delete request</button></div></form></div></div>

@@ -1,0 +1,5 @@
+@model CampusServiceRequest
+@{ ViewData["Title"] = "Request Details"; }
+<div class="form-shell"><a class="back-link" asp-action="Index">← Back to dashboard</a><span class="eyebrow">REQUEST #@Model.Id</span><h1>@Model.Title</h1><p class="muted">Submitted on @Model.CreatedAt.ToString("dd MMMM yyyy, hh:mm tt")</p>
+<div class="detail-card"><dl><dt>Student</dt><dd>@Model.StudentName</dd><dt>Email</dt><dd>@Model.Email</dd><dt>Department</dt><dd>@Model.Department</dd><dt>Category</dt><dd>@Model.Category</dd><dt>Priority</dt><dd>@Model.Priority</dd><dt>Status</dt><dd>@Model.Status</dd><dt>Description</dt><dd>@Model.Description</dd></dl></div>
+<div class="form-actions"><a class="btn btn-outline" asp-action="Index">Back</a><a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit request</a></div></div>
