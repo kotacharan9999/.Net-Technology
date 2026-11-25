@@ -1,0 +1,37 @@
+@Practical10_HostAddress = https://localhost:7003
+
+### Get all students
+GET {{Practical10_HostAddress}}/api/students
+Accept: application/json
+
+### Get student by ID
+GET {{Practical10_HostAddress}}/api/students/1
+Accept: application/json
+
+### Add a student
+POST {{Practical10_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Sneha Shah",
+  "department": "Computer Science",
+  "email": "sneha@example.com",
+  "company": "Google",
+  "package": 8.5
+}
+
+### Update student
+PUT {{Practical10_HostAddress}}/api/students/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Rahul Sharma Updated",
+  "department": "Computer Science",
+  "email": "rahul.updated@example.com",
+  "company": "Microsoft",
+  "package": 9.0
+}
+
+### Delete student
+DELETE {{Practical10_HostAddress}}/api/students/3
